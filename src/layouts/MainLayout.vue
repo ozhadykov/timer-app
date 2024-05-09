@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="row timer-header">
-      <div class="col row logo-wrapper justify-center q-py-lg">
+      <div class="col row logo-wrapper justify-center q-py-sm">
         <div
           class="self-center text-h5 text-weight-bold"
           style="font-style: italic"
@@ -14,9 +14,18 @@
       </div>
     </q-header>
 
-    <!-- <q-btn icon="add" size="64px" class="add-timer-btn"></q-btn> -->
-
-    <q-footer> Footer </q-footer>
+    <q-footer class="bg-white footer" elevated>
+      <q-tabs v-model="tab" inline-label no-caps class="text-dark nav-tabs">
+        <q-tab name="timers" icon="timer" label="Timers" class="nav-tab" />
+        <q-tab
+          name="statistics"
+          icon="signal_cellular_alt"
+          label="Statistics"
+          class="nav-tab"
+        />
+        <q-tab name="profiles" icon="account_circle" label="Profile" />
+      </q-tabs>
+    </q-footer>
 
     <q-page-container>
       <KeepAlive>
@@ -26,7 +35,7 @@
         icon="add"
         color="primary"
         round
-        padding="lg"
+        padding="md"
         size="md"
         class="add-timer-btn"
       ></q-btn>
@@ -37,9 +46,14 @@
 <script setup>
 import { ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
+
+const tab = ref();
 </script>
 
 <style scoped lang="scss">
+.timer-header {
+  border-radius: 0 0 8px 8px;
+}
 .add-timer-btn {
   position: absolute;
   bottom: 4rem;
@@ -47,13 +61,14 @@ import EssentialLink from "components/EssentialLink.vue";
   z-index: 10;
 }
 
-// .timer-header::after {
-//   content: "";
-//   position: absolute;
-//   height: 100px;
-//   width: 100px;
-//   background-color: aqua;
-//   right: 0;
-//   border-radius: 40px;
-// }
+.footer {
+  border-top: 2px solid $dark;
+  border-right: 2px solid $dark;
+  border-left: 2px solid $dark;
+  border-radius: 8px 8px 0 0;
+}
+
+.nav-tab {
+  border-right: 2px solid $dark;
+}
 </style>
