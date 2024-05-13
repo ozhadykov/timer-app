@@ -10,12 +10,12 @@
         <div class="card q-pa-md timer-card row justify-between">
           <div class="timer-name row justify-between q-gutter-sm items-center">
             <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-medium text-body2">Work</span>
+            <span class="text-weight-bold text-body2">Work</span>
           </div>
           <div
             class="timer-actions row justify-between q-gutter-md items-center"
           >
-            <div class="timer-time text-weight-medium text-body2">51:02</div>
+            <div class="timer-time text-weight-bold text-body2">51:02</div>
             <div class="timer-control">
               <q-btn
                 round
