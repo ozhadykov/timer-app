@@ -1,31 +1,40 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="row timer-header">
-      <div class="col">
-        <q-toolbar>
+      <div class="col-3 row justify-center">
+        <q-toolbar class="q-px-lg">
           <q-btn
-            round
             icon="person"
             aria-laben="Profile"
             color="primary"
+            padding="8px"
+            class="header--btn"
           ></q-btn>
         </q-toolbar>
       </div>
-      <div class="col row logo-wrapper justify-center q-py-md">
+      <div class="col row logo-wrapper justify-center q-py-lg">
         <div
           class="self-center text-h5 text-weight-bold"
           style="font-style: italic"
         >
-          LifeTimer
+          LifeTracker
         </div>
         <div class="timer-icon text-center">
           <q-icon name="img:icons/timer-icon.png" size="48px"></q-icon>
         </div>
       </div>
+      <div class="col-3"></div>
     </q-header>
 
-    <q-footer class="bg-white footer">
-      <q-tabs v-model="tab" inline-label no-caps class="text-dark nav-tabs">
+    <q-footer class="bg-white footer q-px-md">
+      <q-tabs
+        v-model="tab"
+        inline-label
+        no-caps
+        class="text-dark nav-tabs"
+        active-bg-color="primary"
+        active-color="secondary"
+      >
         <q-tab name="timers" icon="timer" label="Timers" class="nav-tab" />
         <q-tab
           name="statistics"
@@ -38,7 +47,7 @@
 
     <q-page-container class="main-page-container">
       <KeepAlive>
-        <div class="main-page-container--content q-pt-md">
+        <div class="main-page-container--content">
           <router-view />
         </div>
       </KeepAlive>
@@ -46,8 +55,8 @@
         icon="add"
         color="primary"
         round
-        padding="md"
-        size="md"
+        padding="lg"
+        size="16px"
         class="add-timer-btn"
       ></q-btn>
     </q-page-container>
@@ -62,6 +71,13 @@ const tab = ref();
 </script>
 
 <style scoped lang="scss">
+.timer-header {
+  .header--btn {
+    border-radius: 0.9rem;
+    border: 2px solid $secondary;
+  }
+}
+
 .main-page-container {
   background-color: $primary;
   padding-bottom: 0 !important;
@@ -75,23 +91,16 @@ const tab = ref();
 
 .add-timer-btn {
   position: absolute;
-  bottom: 4rem;
+  bottom: 4.5rem;
   right: 1rem;
   z-index: 10;
 }
 
 .footer {
-  // border-top: 2px solid $dark;
-  // border-right: 2px solid $dark;
-  // border-left: 2px solid $dark;
-  // border-radius: 8px 8px 0 0;
-
   .nav-tab {
-    background: $positive;
     border: 2px solid $primary;
-    outline: 2px solid $primary;
-    clip-path: polygon(0% 100%, 17.5% 0%, 82.5% 0%, 100% 100%);
-    box-shadow: 0 0 0 200px $primary;
+    border-radius: 14px 14px 0 0;
+    padding: 0.6rem 0 0.6rem 0;
   }
 }
 </style>

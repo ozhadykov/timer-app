@@ -1,87 +1,84 @@
 <template>
-  <q-page class="q-pa-md q-pt-lg column q-gutter-xl">
+  <q-page class="q-pa-lg q-pt-lg column timers-main-page">
     <div class="recent-timers">
-      <div class="title text-left q-mb-md">
+      <div
+        class="title-container text-left q-mb-lg row justify-between items-center"
+      >
         <span class="text-h5 text-weight-medium" style="font-weight: 600">
           Most Recent
         </span>
+
+        <q-btn
+          icon="settings"
+          aria-label="settings"
+          color="primary"
+          outline
+          round
+          padding="4px"
+          size="12px"
+          unelevated
+          class="home-title--settings-btn"
+        ></q-btn>
       </div>
-      <div class="content column q-gutter-md">
-        <div class="card q-pa-md timer-card row justify-between">
+
+      <div class="content column q-gutter-lg">
+        <div class="card q-pa-md q-py-lg timer-card row justify-between">
           <div class="timer-name row justify-between q-gutter-sm items-center">
             <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-bold text-body2">Work</span>
+            <span class="text-weight-bold text-body1">Work</span>
           </div>
           <div
             class="timer-actions row justify-between q-gutter-md items-center"
           >
-            <div class="timer-time text-weight-bold text-body2">51:02</div>
+            <div class="timer-time text-weight-bold text-body1">51:02</div>
             <div class="timer-control">
               <q-btn
                 round
                 unelevated
                 padding="none"
-                size="md"
+                size="lg"
                 icon="play_circle_outline"
               ></q-btn>
             </div>
           </div>
         </div>
-        <div class="card q-pa-md timer-card row justify-between">
+
+        <div class="card q-pa-md q-py-lg timer-card row justify-between">
           <div class="timer-name row justify-between q-gutter-sm items-center">
             <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-medium text-body2">Work</span>
+            <span class="text-weight-bold text-body1">Work</span>
           </div>
           <div
             class="timer-actions row justify-between q-gutter-md items-center"
           >
-            <div class="timer-time text-weight-medium text-body2">51:02</div>
+            <div class="timer-time text-weight-bold text-body1">51:02</div>
             <div class="timer-control">
               <q-btn
                 round
                 unelevated
                 padding="none"
-                size="md"
+                size="lg"
                 icon="play_circle_outline"
               ></q-btn>
             </div>
           </div>
         </div>
-        <div class="card q-pa-md timer-card row justify-between">
+
+        <div class="card q-pa-md q-py-lg timer-card row justify-between">
           <div class="timer-name row justify-between q-gutter-sm items-center">
             <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-medium text-body2">Work</span>
+            <span class="text-weight-bold text-body1">Work</span>
           </div>
           <div
             class="timer-actions row justify-between q-gutter-md items-center"
           >
-            <div class="timer-time text-weight-medium text-body2">51:02</div>
+            <div class="timer-time text-weight-bold text-body1">51:02</div>
             <div class="timer-control">
               <q-btn
                 round
                 unelevated
                 padding="none"
-                size="md"
-                icon="play_circle_outline"
-              ></q-btn>
-            </div>
-          </div>
-        </div>
-        <div class="card q-pa-md timer-card row justify-between">
-          <div class="timer-name row justify-between q-gutter-sm items-center">
-            <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-medium text-body2">Work</span>
-          </div>
-          <div
-            class="timer-actions row justify-between q-gutter-md items-center"
-          >
-            <div class="timer-time text-weight-medium text-body2">51:02</div>
-            <div class="timer-control">
-              <q-btn
-                round
-                unelevated
-                padding="none"
-                size="md"
+                size="lg"
                 icon="play_circle_outline"
               ></q-btn>
             </div>
@@ -91,67 +88,48 @@
     </div>
 
     <div class="not-actual-timers">
-      <div class="title text-left q-mb-md">
+      <div class="title-container text-left q-mb-lg">
         <span class="text-h5 text-weight-medium" style="font-weight: 600">
           Not Actual
         </span>
       </div>
-      <div class="content column q-gutter-md">
-        <div class="card q-pa-md timer-card row justify-between">
+      <div class="content column q-gutter-lg">
+        <div class="card q-pa-md q-py-lg timer-card row justify-between">
           <div class="timer-name row justify-between q-gutter-sm items-center">
             <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-medium text-body2">Work</span>
+            <span class="text-weight-bold text-body1">Work</span>
           </div>
           <div
             class="timer-actions row justify-between q-gutter-md items-center"
           >
-            <div class="timer-time text-weight-medium text-body2">51:02</div>
+            <div class="timer-time text-weight-bold text-body1">51:02</div>
             <div class="timer-control">
               <q-btn
                 round
                 unelevated
                 padding="none"
-                size="md"
+                size="lg"
                 icon="play_circle_outline"
               ></q-btn>
             </div>
           </div>
         </div>
-        <div class="card q-pa-md timer-card row justify-between">
+
+        <div class="card q-pa-md q-py-lg timer-card row justify-between">
           <div class="timer-name row justify-between q-gutter-sm items-center">
             <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-medium text-body2">Work</span>
+            <span class="text-weight-bold text-body1">Work</span>
           </div>
           <div
             class="timer-actions row justify-between q-gutter-md items-center"
           >
-            <div class="timer-time text-weight-medium text-body2">51:02</div>
+            <div class="timer-time text-weight-bold text-body1">51:02</div>
             <div class="timer-control">
               <q-btn
                 round
                 unelevated
                 padding="none"
-                size="md"
-                icon="play_circle_outline"
-              ></q-btn>
-            </div>
-          </div>
-        </div>
-        <div class="card q-pa-md timer-card row justify-between">
-          <div class="timer-name row justify-between q-gutter-sm items-center">
-            <q-icon name="drag_indicator" size="18px"></q-icon>
-            <span class="text-weight-medium text-body2">Work</span>
-          </div>
-          <div
-            class="timer-actions row justify-between q-gutter-md items-center"
-          >
-            <div class="timer-time text-weight-medium text-body2">51:02</div>
-            <div class="timer-control">
-              <q-btn
-                round
-                unelevated
-                padding="none"
-                size="md"
+                size="lg"
                 icon="play_circle_outline"
               ></q-btn>
             </div>
@@ -163,3 +141,13 @@
 </template>
 
 <script setup></script>
+
+<style scoped lang="scss">
+.timers-main-page {
+  gap: $gap-xl;
+
+  .home-title--settings-btn {
+    border: 2px solid $primary;
+  }
+}
+</style>

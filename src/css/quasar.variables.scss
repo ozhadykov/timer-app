@@ -26,3 +26,11 @@ $positive: #21ba45;
 $negative: #c10015;
 $info: #31ccec;
 $warning: #f2c037;
+
+$gap-base: 24px;
+
+$gap-xs: $gap-base * 0.25;
+$gap-s: $gap-base * 0.5;
+$gap-md: $gap-base * 1;
+$gap-lg: $gap-base * 1.25;
+$gap-xl: $gap-base * 1.5;
