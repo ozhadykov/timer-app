@@ -91,9 +91,37 @@
           <q-form class="col" @submit="handleCreateTimer">
             <q-input
               v-model="trackerName"
-              label="New tracker"
-              class="text-weight-bold q-px-xl"
+              input-class="text-weight-bold text-center text-body1"
+              placeholder="✍️ Name"
+              class="q-px-xl q-mb-lg row"
             ></q-input>
+            <div class="column">
+              <div class="setting-container column">
+                <div
+                  class="new-tracker-setting--header row justify-between flex-center"
+                >
+                  <label
+                    for="new-tracker-setting--toggle"
+                    class="text-weight-600 text-body1"
+                    >Notificate Every</label
+                  >
+                  <q-toggle
+                    v-model="newTracker.notify.enabled"
+                    class="new-tracker-setting--toggle"
+                  ></q-toggle>
+                </div>
+                <div class="new-tracker-setting-body q-px-xl">
+                  <div class="row justify-between">
+                    <div class="col-5">
+                      <q-input type="number" placeholder="5" dense=""></q-input>
+                    </div>
+                    <div class="col-5">
+                      <q-select v-model="model" :options="options" dense />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </q-form>
           <div class="col-1"></div>
         </q-card-section>
@@ -120,6 +148,15 @@ import EssentialLink from "components/EssentialLink.vue";
 const tab = ref();
 const addTimer = ref(false);
 const trackerName = ref();
+
+const newTracker = ref({
+  name: "",
+  notify: {
+    enabled: true,
+    value: 5,
+    type: "",
+  },
+});
 </script>
 
 <style scoped lang="scss">
