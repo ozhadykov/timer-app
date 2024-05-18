@@ -1,29 +1,32 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="row timer-header">
-      <div class="col-3 row justify-center">
-        <q-toolbar class="q-px-lg">
-          <q-btn
-            icon="person"
-            aria-laben="Profile"
-            color="primary"
-            padding="8px"
-            class="header--btn"
-          ></q-btn>
-        </q-toolbar>
-      </div>
-      <div class="col row logo-wrapper justify-center q-py-lg">
-        <div
-          class="self-center text-h5 text-weight-bold"
-          style="font-style: italic"
-        >
-          LifeTracker
+    <q-header class="column timer-header">
+      <div class="row w-100">
+        <div class="col-3 row justify-center">
+          <q-toolbar class="q-px-lg">
+            <q-btn
+              icon="person"
+              aria-laben="Profile"
+              color="primary"
+              padding="8px"
+              class="header--btn"
+            ></q-btn>
+          </q-toolbar>
         </div>
-        <div class="timer-icon text-center">
-          <q-icon name="img:icons/timer-icon.png" size="48px"></q-icon>
+        <div class="col row logo-wrapper justify-center q-py-lg">
+          <div
+            class="self-center text-h5 text-weight-bold"
+            style="font-style: italic"
+          >
+            LifeTracker
+          </div>
+          <div class="timer-icon text-center">
+            <q-icon name="img:icons/timer-icon.png" size="48px"></q-icon>
+          </div>
         </div>
+        <div class="col-3"></div>
       </div>
-      <div class="col-3"></div>
+      <div class="main-content--header-fixed q-py-md"></div>
     </q-header>
 
     <q-footer class="bg-white footer q-px-md">
@@ -58,8 +61,55 @@
         padding="lg"
         size="16px"
         class="add-timer-btn"
+        @click="addTimer = true"
       ></q-btn>
     </q-page-container>
+
+    <q-dialog v-model="addTimer" backdrop-filter="blur(4px) brightness(60%)">
+      <q-card class="dialog-card border-sm">
+        <q-card-section class="row items-center q-pb-none">
+          <div class="col-1"></div>
+
+          <div class="col text-h6 text-center text-weight-600">
+            Add New Tracker
+          </div>
+
+          <div class="col-1">
+            <q-btn
+              icon="cancel"
+              color="primary"
+              round
+              padding="0px"
+              size="16px"
+              v-close-popup
+            ></q-btn>
+          </div>
+        </q-card-section>
+
+        <q-card-section class="row">
+          <div class="col-1"></div>
+          <q-form class="col" @submit="handleCreateTimer">
+            <q-input
+              v-model="trackerName"
+              label="New tracker"
+              class="text-weight-bold q-px-xl"
+            ></q-input>
+          </q-form>
+          <div class="col-1"></div>
+        </q-card-section>
+
+        <q-card-actions align="center">
+          <q-btn
+            label="Add Timer"
+            color="primary"
+            no-caps
+            v-close-popup
+            padding="xs xl"
+            class="text-weight-light btn-primary text-body1"
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </q-layout>
 </template>
 
@@ -68,6 +118,8 @@ import { ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 
 const tab = ref();
+const addTimer = ref(false);
+const trackerName = ref();
 </script>
 
 <style scoped lang="scss">
@@ -76,21 +128,23 @@ const tab = ref();
     border-radius: 0.9rem;
     border: 2px solid $secondary;
   }
+
+  .main-content--header-fixed {
+    background-color: $secondary;
+    border-radius: 40px 0 0 0;
+  }
 }
 
 .main-page-container {
-  background-color: $primary;
-  padding-bottom: 0 !important;
-
   .main-page-container--content {
     background-color: $secondary;
-    border-radius: 40px 0 0 0;
+    // border-radius: 40px 40px 0 0;
     // border: 1px solid $secondary;
   }
 }
 
 .add-timer-btn {
-  position: absolute;
+  position: fixed;
   bottom: 4.5rem;
   right: 1rem;
   z-index: 10;

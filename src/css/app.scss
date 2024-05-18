@@ -1,6 +1,39 @@
 // app global css in SCSS form
 
+.w-100 {
+  width: 100%;
+}
+
 .card {
   border: 2px solid black;
   border-radius: 15px;
+}
+
+.border-sm {
+  border: 2px solid $primary;
+}
+
+.text-weight-600 {
+  font-weight: 600;
+}
+
+/*
+
+  Dialog/Modal
+
+*/
+
+.dialog-card {
+  width: 350px;
+  border-radius: 19px !important;
+}
+
+/*
+
+Buttons
+
+*/
+
+.btn-primary {
+  border-radius: 10px;
 }

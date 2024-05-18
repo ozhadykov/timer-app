@@ -1,0 +1,12 @@
+{
+  "name": "t-app",
+  "version": "0.0.1",
+  "description": "This is a little time tracking app project, beacuse i could not find any solution in in internet, which could fullfill all my needs:), So i realized, i'm a software dev, why should not i learn something new and build the app, to solve my problem and probably, problems of other people",
+  "author": "Omar Zhadykov",
+  "private": true,
+  "dependencies": {
+    "@capacitor/app": "^5.0.0",
+    "@capacitor/cli": "^5.0.0",
+    "@capacitor/core": "^5.0.0"
+  }
+}
