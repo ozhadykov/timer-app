@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-export const useCounterStore = defineStore('counter', {
+export const useTrackerStore = defineStore("trackerState", {
   state: () => ({
-    counter: 0,
+    trackers: [],
   }),
   getters: {
     doubleCount: (state) => state.counter * 2,
@@ -10,6 +10,9 @@ export const useCounterStore = defineStore('counter', {
   actions: {
     increment() {
       this.counter++;
+    },
+    addTracker(tracker) {
+      this.trackers.push(tracker);
     },
   },
 });
